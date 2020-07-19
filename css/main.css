@@ -95,54 +95,88 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-
+/*Large Background Image*/
 html {
-  background-color: #222;
+  background: url('../img/kai-pilger-Ef6iL87-vOA-unsplash.jpg');
   height: 100%;
   width: 100%;
 }
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
-  padding: 2em;
+  padding: 0em 2em;
   font-size: 1.25em;
-  height: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-.wrapper {
-  /*add display:flex and set justify-content to space-between*/
+.flex-container {
   display: flex;
+  flex-flow: row wrap;
   justify-content: space-between;
+  max-width: 1200px;
+}
+
+p span {
+  color: #FFEBCD;
+}
+
+header,
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+header h1 {
+  font-family: 'Lora', sans-serif;
+  font-size: 3em;
+  color: #fff;
+}
+
+header h1 span {
+  color: #FFEBCD;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 20px;
+}
+
+main p {
+  font-size: 1.4em;
+  color: #fff;
   font-weight: 700;
 }
 
-.div-1, .div-2, .div-3 {
-  /*give the divs a width of 30%, add display:flex, set justify-content and align-items to center*/
+.flex-items {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
   line-height: 1.5em;
-  font-size: 1.6em;
-  height: 300px;
-  width: 30%;
+  font-size: 1.1em;
+  font-weight: 525;
+  color: #fff;
+  border-bottom: 2px solid #555;
 }
 
-.div-2 {
-  border-left: solid 1px #fff;
-  border-right: solid 1px #fff;
-  padding: 0 30px;
+footer {
+  border-top: 1px solid #fff;
+  display: flex;
+  justify-content: center;
 }
 
-.div-2 {
-  font-size: 1.5em;
+#contact ul li {
+     display: inline-block;
 }
 
-.wrapper span {
-  color: #FFA07A;
+#contact ul img {
+    margin: 20px 0;
+    padding: 0 70px;
 }
-
-
 
 /* ==========================================================================
    Helper classes
@@ -223,6 +257,25 @@ body {
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
+
+@media all and (max-width: 768px) {
+    body {
+      padding: 1em;
+    }
+}
+
+@media (min-width: 1200px) {
+    .flex-items {
+      flex-basis: 30%;
+      border-bottom: none;
+    }
+
+    #div-2 p {
+      border-left: 1px solid #555;
+      border-right: 1px solid #555;
+      padding: 0 40px;
+    }
+}
 
 @media print,
        (-webkit-min-device-pixel-ratio: 1.25),
